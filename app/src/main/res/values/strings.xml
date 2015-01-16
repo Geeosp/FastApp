@@ -6,6 +6,17 @@
     <string name="i_am_one">I am one!</string>
     <string name="i_am_two">We are two!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_one">OneActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_two">TwoActivity</string>
+    <string name="title_activity_fullscreen_simon">FullscreenSimonActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="player">Player</string>
+    <string name="name">Name</string>
+    <string name="player1">Player 1</string>
+    <string name="player2">Player 2</string>
+    <string name="ok">OK</string>
+    <string name="title_activity_fullscreen_velha">FullscreenVelhaActivity</string>
 
 </resources>
-
