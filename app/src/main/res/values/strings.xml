@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">FastApp</string>
+    <string name="how_many_you_are">How many you are?</string>
+    <string name="i_am_one">I am one!</string>
+    <string name="i_am_two">We are two!</string>
+    <string name="action_settings">Settings</string>
+
+</resources>
+
