@@ -20,5 +20,8 @@
     <string name="title_activity_fullscreen_velha">FullscreenVelhaActivity</string>
     <string name="title_activity_simon">SimonActivity</string>
     <string name="title_activity_velha">VelhaActivity</string>
+    <string name="player1Name">Player 1</string>
+    <string name="player2Name">Player 2</string>
+    <string name="tic_tac_toe_contest">Tic Tac Toe Contest!</string>
 
 </resources>

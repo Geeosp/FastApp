@@ -12,7 +12,7 @@
     android:padding="60dp">
 
     <TextView
-        android:text="@string/player1"
+        android:text="@string/tic_tac_toe_contest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
@@ -20,18 +20,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/et_player1_name"
-        android:hint="@string/name" />
+        android:hint="@string/player1Name"
+        android:lines="1" />
 
-    <TextView
-        android:text="@string/player2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/et_player2_name"
-        android:hint="@string/name" />
+        android:hint="@string/player2Name" />
 
 
     <Button

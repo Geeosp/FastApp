@@ -1,70 +1,174 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     tools:context="com.example.geeo.fastapp.fastapp.VelhaActivity">
-
+    <!--player 2-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:rotation="180"
-        >
+        android:rotation="180">
+
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:id="@+id/iv_circle"
-            android:layout_alignParentLeft="true"/>
+            android:layout_alignParentLeft="true" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:text="0"
-            android:id="@+id/tv_player2_score"
-            />
+            android:id="@+id/tv_player2_score" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Name"
+            android:id="@+id/tv_player2_name"
             android:layout_toRightOf="@id/iv_circle"
             android:layout_toLeftOf="@id/tv_player2_score"
+
             />
 
-        </RelativeLayout>
+    </RelativeLayout>
+
+    <!--Tabuleiro -->
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:id="@+id/bigContainer">
 
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:id="@+id/tic_tac_container"
+            android:orientation="vertical">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:onClick="played">
 
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/v_00"
+                    android:onClick="played" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/v_01"
+                    android:onClick="played" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/v_02"
+                    android:onClick="played" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/v_10"
+                    android:onClick="played" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/v_11"
+                    android:onClick="played" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/v_12"
+                    android:onClick="played" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:onClick="played">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/v_20"
+                    android:onClick="played" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/v_21"
+                    android:onClick="played" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/v_22"
+                    android:onClick="played" />
+            </LinearLayout>
         </LinearLayout>
+
+
+    </LinearLayout>
+
+    <!--player 1-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
         >
+
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:id="@+id/iv_xis"
-            android:layout_alignParentLeft="true"/>
+            android:layout_alignParentLeft="true" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:text="0"
-            android:id="@+id/tv_player1_score"
-            />
+            android:id="@+id/tv_player1_score" />
+
         <TextView
+            android:id="@+id/tv_player1_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Name"
             android:layout_toRightOf="@id/iv_xis"
-            android:layout_toLeftOf="@id/tv_player1_score"
-            />
+            android:layout_toLeftOf="@id/tv_player1_score" />
 
     </RelativeLayout>
 
