@@ -199,7 +199,7 @@ public class VelhaActivity extends ActionBarActivity {
 
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(VelhaActivity.this);
         alertDialogBuilder.setTitle(title);
-        alertDialogBuilder.setMessage(player1Name + " " + player1Score + " x " + player1Score + " " + player2Name);
+        alertDialogBuilder.setMessage(player1Name + " " + player1Score + " x " + player2Score + " " + player2Name);
         alertDialogBuilder.setPositiveButton(getResources().getString(R.string.action_ok), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 restart();
