@@ -1,5 +1,7 @@
 package com.example.geeo.fastapp.fastapp;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -8,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -28,7 +31,8 @@ public class VelhaActivity extends ActionBarActivity {
     final static int NOTHING = 0;
     int[][] viewsIds;
     LinearLayout tictacContainer;
-
+    int stateTag = 12;
+    int emptyRooms;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +48,7 @@ public class VelhaActivity extends ActionBarActivity {
         tv_score1 = (TextView) findViewById(R.id.tv_player1_score);
         tv_score2 = (TextView) findViewById(R.id.tv_player2_score);
         tictacContainer = (LinearLayout) findViewById(R.id.tic_tac_container);
+        //mapeando os ids das views em um array, pra poder manipular melhor
         //nao achei um jeito melhor de fazer isso:/
         viewsIds = new int[3][3];
         viewsIds[0][0] = R.id.v_00;
@@ -71,16 +76,10 @@ public class VelhaActivity extends ActionBarActivity {
         player1Score = 0;
         player2Score = 0;
         turn = PLAYER1;
-        View v;
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                v = findViewById(viewsIds[i][j]);
-                v.setTag(NOTHING);
-            }
-        }
 
 
-        refresh();
+        restart();
+
     }
 
     public void refresh() {//deve ser chamado sempre para atualizar os elementos visuais
@@ -91,23 +90,119 @@ public class VelhaActivity extends ActionBarActivity {
 
 
     public void restart() {//chamar sempre em uma nova rodada
-
+        View v;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                v = findViewById(viewsIds[i][j]);
+                v.setTag(NOTHING);//zera o estado da casa
+            }
+        }
+        emptyRooms = 9;
 
         refresh();
     }
 
     public void played(View v) {
-        if ((Integer) v.getTag() == NOTHING) {//so é alterada caso a casa ainda nao tenha sido usada
+
+        int tag = (Integer) v.getTag();
+        if (tag == NOTHING) {//so é alterada caso a casa ainda nao tenha sido usada
             switch (turn) {
                 case PLAYER1:
-
+                    ((ImageView) v).setImageResource(R.drawable.tic_tac_o);
+                    v.setTag(PLAYER1);
                     break;
                 case PLAYER2:
-
-
+                    ((ImageView) v).setImageResource(R.drawable.tic_tac_x);
+                    v.setTag(PLAYER2);
                     break;
             }
+            isEndOfGame(v.getId());
+
+            turn = 1 + (turn % 2);//troca de turno
         }
+
+    }
+
+    public boolean isEndOfGame(int viewId) {
+        int a = 0, b = 0;//posicao da view
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (viewId == viewsIds[i][j]) {
+                    a = i;
+                    b = j;
+                }
+            }
+        }
+
+        boolean win = true;
+        int tag = (Integer) findViewById(viewsIds[a][b]).getTag();
+        //verifica a linha
+        for (int k = 0; k < 3; k++) {
+            if (tag != (Integer) findViewById(viewsIds[a][k]).getTag()) {
+                win = false;
+            }
+
+        }
+        //verifica a coluna
+        if (!win) {
+            win = true;
+            for (int k = 0; k < 3; k++) {
+                if (tag != (Integer) findViewById(viewsIds[k][b]).getTag()) {//coluna
+                    win = false;
+                }
+            }
+        }
+        //verifica as diagonais
+
+        if (!win && a == b) {
+            win = true;
+            for (int k = 0; k < 3; k++) {
+                if (tag != (Integer) findViewById(viewsIds[k][k]).getTag()) {//coluna
+                    win = false;
+                }
+            }
+        }
+
+        if (!win && a == (2 - b)) {
+            win = true;
+            for (int k = 0; k < 3; k++) {
+                if (tag != (Integer) findViewById(viewsIds[k][2 - k]).getTag()) {//coluna
+                    win = false;
+                }
+            }
+        }
+
+        if (win) {
+            alert("Fim de jogo!");
+        }
+
+
+        return win;
+    }
+
+    public void alert(String message) {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(VelhaActivity.this);
+        //alertDialogBuilder.setTitle(title);
+        alertDialogBuilder.setMessage(message);
+        // set positive button: Yes message
+        alertDialogBuilder.setPositiveButton(getResources().getString(R.string.action_ok), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+            }
+        });
+        /*
+        // set negative button: No message
+        alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // cancel the alert box and put a Toast to the user
+                dialog.cancel();
+                Toast.makeText(getApplicationContext(), "You chose a negative answer",
+                        Toast.LENGTH_LONG).show();
+            }
+        });
+        */
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        // show alert
+        alertDialog.show();
     }
 
 

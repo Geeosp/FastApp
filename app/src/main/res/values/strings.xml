@@ -23,5 +23,6 @@
     <string name="player1Name">Player 1</string>
     <string name="player2Name">Player 2</string>
     <string name="tic_tac_toe_contest">Tic Tac Toe Contest!</string>
+    <string name="action_ok">Ok</string>
 
 </resources>
