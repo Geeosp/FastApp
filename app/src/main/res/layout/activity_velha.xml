@@ -53,7 +53,8 @@
             android:layout_width="300dp"
             android:layout_height="300dp"
             android:id="@+id/tic_tac_container"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="@drawable/tic_tac_map">
 
             <LinearLayout
                 android:layout_width="match_parent"
