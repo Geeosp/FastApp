@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
+
 public class VelhaActivity extends ActionBarActivity {
 
     TextView tv_player1;
@@ -110,11 +111,11 @@ public class VelhaActivity extends ActionBarActivity {
             emptyRooms--;
             switch (turn) {
                 case PLAYER1:
-                    ((ImageView) v).setImageResource(R.drawable.tic_tac_o);
+                    ((ImageView) v).setImageResource(R.drawable.tic_tac_x);
                     v.setTag(PLAYER1);
                     break;
                 case PLAYER2:
-                    ((ImageView) v).setImageResource(R.drawable.tic_tac_x);
+                    ((ImageView) v).setImageResource(R.drawable.tic_tac_o);
                     v.setTag(PLAYER2);
                     break;
             }

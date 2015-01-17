@@ -18,6 +18,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:id="@+id/iv_circle"
+android:src="@drawable/tic_tac_o"
             android:layout_alignParentLeft="true" />
 
         <TextView
@@ -154,6 +155,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:id="@+id/iv_xis"
+            android:src="@drawable/tic_tac_x"
             android:layout_alignParentLeft="true" />
 
         <TextView
