@@ -18,5 +18,7 @@
     <string name="player2">Player 2</string>
     <string name="ok">OK</string>
     <string name="title_activity_fullscreen_velha">FullscreenVelhaActivity</string>
+    <string name="title_activity_simon">SimonActivity</string>
+    <string name="title_activity_velha">VelhaActivity</string>
 
 </resources>

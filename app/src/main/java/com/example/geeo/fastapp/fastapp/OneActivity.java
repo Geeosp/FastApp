@@ -1,17 +1,21 @@
 package com.example.geeo.fastapp.fastapp;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 
 
 public class OneActivity extends ActionBarActivity {
-
+    EditText et_player_name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_one);
+        this.et_player_name = (EditText)findViewById(R.id.et_player_name);
     }
 
 
@@ -35,5 +39,10 @@ public class OneActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    public void openSimon(View v){
+        Intent intent = new Intent(this, SimonActivity.class);
+        intent.putExtra("PlayerName", et_player_name.getText());
+        startActivity(intent);
     }
 }
