@@ -24,5 +24,7 @@
     <string name="player2Name">Player 2</string>
     <string name="tic_tac_toe_contest">Tic Tac Toe Contest!</string>
     <string name="action_ok">Ok</string>
+    <string name="draw">Draw!</string>
+    <string name="has_won">has Won!</string>
 
 </resources>

@@ -95,6 +95,7 @@ public class VelhaActivity extends ActionBarActivity {
             for (int j = 0; j < 3; j++) {
                 v = findViewById(viewsIds[i][j]);
                 v.setTag(NOTHING);//zera o estado da casa
+                ((ImageView) v).setImageResource(0);
             }
         }
         emptyRooms = 9;
@@ -106,6 +107,7 @@ public class VelhaActivity extends ActionBarActivity {
 
         int tag = (Integer) v.getTag();
         if (tag == NOTHING) {//so é alterada caso a casa ainda nao tenha sido usada
+            emptyRooms--;
             switch (turn) {
                 case PLAYER1:
                     ((ImageView) v).setImageResource(R.drawable.tic_tac_o);
@@ -116,9 +118,20 @@ public class VelhaActivity extends ActionBarActivity {
                     v.setTag(PLAYER2);
                     break;
             }
-            isEndOfGame(v.getId());
+            boolean win = isEndOfGame(v.getId());
 
-            turn = 1 + (turn % 2);//troca de turno
+            if (win) {
+                if (turn == PLAYER2) player2Score++;
+                if (turn == PLAYER1) player1Score++;
+                alert(turn);
+            } else if (emptyRooms == 0) {
+                player1Score++;
+                player2Score++;
+                alert(NOTHING);
+            } else {
+                turn = 1 + (turn % 2);//troca de turno
+
+            }
         }
 
     }
@@ -171,35 +184,36 @@ public class VelhaActivity extends ActionBarActivity {
                 }
             }
         }
-
-        if (win) {
-            alert("Fim de jogo!");
-        }
-
-
         return win;
     }
 
-    public void alert(String message) {
+    public void alert(int whatHappened) {
+        String title;
+        if (whatHappened == NOTHING) {
+            title = getString(R.string.draw);
+        } else if (whatHappened == PLAYER1) {
+            title = player1Name + " " + getString(R.string.has_won);
+        } else {
+            title = player2Name + " " + getString(R.string.has_won);
+        }
+
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(VelhaActivity.this);
-        //alertDialogBuilder.setTitle(title);
-        alertDialogBuilder.setMessage(message);
-        // set positive button: Yes message
+        alertDialogBuilder.setTitle(title);
+        alertDialogBuilder.setMessage(player1Name + " " + player1Score + " x " + player1Score + " " + player2Name);
         alertDialogBuilder.setPositiveButton(getResources().getString(R.string.action_ok), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
+                restart();
             }
         });
-        /*
-        // set negative button: No message
+
+
         alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 // cancel the alert box and put a Toast to the user
-                dialog.cancel();
-                Toast.makeText(getApplicationContext(), "You chose a negative answer",
-                        Toast.LENGTH_LONG).show();
+                finish();
+
             }
         });
-        */
         AlertDialog alertDialog = alertDialogBuilder.create();
         // show alert
         alertDialog.show();
