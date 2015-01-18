@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.geeo.fastapp.fastapp" >
+    package="com.example.geeo.fastapp.fastapp">
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme"
-        >
+        android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
-        android:screenOrientation="portrait"
-            android:label="@string/app_name" >
+            android:name="com.example.geeo.fastapp.MainActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,10 +19,9 @@
 
         </activity>
         <activity
-            android:name=".TwoActivity"
+            android:name="com.example.geeo.fastapp.TwoActivity"
             android:label="@string/title_activity_two"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <!--activity
             android:name=".OneActivity"
             android:label="@string/title_activity_one" >
@@ -33,10 +31,9 @@
             android:label="@string/title_activity_simon" >
         </activity-->
         <activity
-            android:name=".TicTacToeActivity"
+            android:name="com.example.geeo.fastapp.TicTacToeActivity"
             android:label="@string/title_activity_velha"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

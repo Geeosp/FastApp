@@ -16,25 +16,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <EditText
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/et_player1_name"
         android:hint="@string/player1Name"
-        android:lines="1" />
+            android:inputType="textPersonName" />
 
 
-    <EditText
+        <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/et_player2_name"
-        android:hint="@string/player2Name" />
-
+            android:hint="@string/player2Name"
+            android:inputType="textPersonName" />
+    </LinearLayout>
 
     <Button
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:text="@string/continue_game"
+        android:text="@string/start"
         android:onClick="openVelha"
 
         />

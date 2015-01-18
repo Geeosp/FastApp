@@ -1,30 +1,28 @@
-package com.example.geeo.fastapp.fastapp;
+package com.example.geeo.fastapp;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
+
+import com.example.geeo.fastapp.fastapp.R;
 
 
-public class TwoActivity extends ActionBarActivity {
-    EditText et_player1_name;
-    EditText et_player2_name;
+public class MainActivity extends ActionBarActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_two);
-        this.et_player1_name = (EditText)findViewById(R.id.et_player1_name);
-        this.et_player2_name = (EditText)findViewById(R.id.et_player2_name);
+        setContentView(R.layout.activity_main);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_two, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -42,12 +40,17 @@ public class TwoActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-    public void openVelha(View v){
-        Intent intent = new Intent(this, TicTacToeActivity.class);
-        String player1Name = et_player1_name.getText().toString();
-        String player2Name = et_player2_name.getText().toString();
-        intent.putExtra("Player1",player1Name );
-        intent.putExtra("Player2",player2Name );
+    public void twoClick(View v){
+        Intent intent = new Intent(this, TwoActivity.class);
+
         startActivity(intent);
     }
+/*
+    public void oneClick(View v){
+        Intent intent = new Intent(this, OneActivity.class);
+        finish();
+        startActivity(intent);
+    }
+*/
+
 }

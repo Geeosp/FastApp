@@ -1,5 +1,11 @@
 <resources>
 
-    <color name="black_overlay">#66000000</color>
+    <!--<color name="black_overlay">#66000000</color>-->
+    <color name="p1_turn_color">#cefffd</color>
+    <color name="p2_turn_color">#ddffdd</color>
 
+
+    <!--referencias, alterar aqui nao influencia em nada-->
+    <color name="tic_tac_color_o">#7ec56d</color>
+    <color name="tic_tac_color_x">#78ccc9</color>
 </resources>

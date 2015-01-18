@@ -1,10 +1,10 @@
-package com.example.geeo.fastapp.fastapp;
+package com.example.geeo.fastapp;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.graphics.Point;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,11 +12,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.geeo.fastapp.fastapp.R;
 
 
-public class TicTacToeActivity extends ActionBarActivity {
+public class TicTacToeActivity extends Activity {
 
     TextView tv_player1;
     TextView tv_score1;
@@ -34,12 +36,15 @@ public class TicTacToeActivity extends ActionBarActivity {
     LinearLayout tictacContainer;
     int stateTag = 12;
     int emptyRooms;
-
+    RelativeLayout rl_turn_p1;
+    RelativeLayout rl_turn_p2;
+    LinearLayout ll_window;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_velha);
-        getSupportActionBar().hide();
+
+        //cria objetos p manipular a UI.
         tv_player1 = (TextView) findViewById(R.id.tv_player1_name);
         tv_player2 = (TextView) findViewById(R.id.tv_player2_name);
         player1Name = getIntent().getExtras().getString("Player1");
@@ -49,9 +54,13 @@ public class TicTacToeActivity extends ActionBarActivity {
         tv_score1 = (TextView) findViewById(R.id.tv_player1_score);
         tv_score2 = (TextView) findViewById(R.id.tv_player2_score);
         tictacContainer = (LinearLayout) findViewById(R.id.tic_tac_container);
+        rl_turn_p1 = (RelativeLayout) findViewById(R.id.rl_turn_player1);
+        rl_turn_p2 = (RelativeLayout) findViewById(R.id.rl_turn_player2);
+        ll_window = (LinearLayout) findViewById(R.id.ll_window);
         //mapeando os ids das views em um array, pra poder manipular melhor
-        //nao achei um jeito melhor de fazer isso:/
         viewsIds = new int[3][3];
+        //nao achei um jeito melhor de fazer isso:/
+        /*
         viewsIds[0][0] = R.id.v_00;
         viewsIds[0][1] = R.id.v_01;
         viewsIds[0][2] = R.id.v_02;
@@ -61,6 +70,12 @@ public class TicTacToeActivity extends ActionBarActivity {
         viewsIds[2][0] = R.id.v_20;
         viewsIds[2][1] = R.id.v_21;
         viewsIds[2][2] = R.id.v_22;
+*/
+        for (int i = 0; i < 3; i++) {//achei sim!
+            for (int j = 0; j < 3; j++) {
+                viewsIds[i][j] = getResources().getIdentifier("v_" + i + j, "id", "com.example.geeo.fastapp.fastapp");
+            }
+        }
 
 
         //fazer o jogo da velha ficar em um quadrado
@@ -79,18 +94,27 @@ public class TicTacToeActivity extends ActionBarActivity {
         turn = PLAYER1;
 
 
-        restart();
+        restartTable();
 
     }
 
     public void refresh() {//deve ser chamado sempre para atualizar os elementos visuais
         tv_score1.setText("" + player1Score);
         tv_score2.setText("" + player2Score);
-
+        int windowColor = 0;
+        switch (turn) {
+            case PLAYER1:
+                windowColor = getResources().getColor(R.color.p1_turn_color);
+                break;
+            case PLAYER2:
+                windowColor = getResources().getColor(R.color.p2_turn_color);
+                break;
+        }
+        ll_window.setBackgroundColor(windowColor);
     }
 
 
-    public void restart() {//chamar sempre em uma nova rodada
+    public void restartTable() {//chamar sempre em uma nova rodada
         View v;
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -134,7 +158,7 @@ public class TicTacToeActivity extends ActionBarActivity {
 
             }
         }
-
+        refresh();
     }
 
     public boolean isEndOfGame(int viewId) {
@@ -201,9 +225,9 @@ public class TicTacToeActivity extends ActionBarActivity {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(TicTacToeActivity.this);
         alertDialogBuilder.setTitle(title);
         alertDialogBuilder.setMessage(player1Name + " " + player1Score + " x " + player2Score + " " + player2Name);
-        alertDialogBuilder.setPositiveButton(getResources().getString(R.string.action_ok), new DialogInterface.OnClickListener() {
+        alertDialogBuilder.setPositiveButton(getResources().getString(R.string.continue_game), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                restart();
+                restartTable();
             }
         });
 
