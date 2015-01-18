@@ -43,7 +43,7 @@ public class TwoActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
     public void openVelha(View v){
-        Intent intent = new Intent(this, VelhaActivity.class);
+        Intent intent = new Intent(this, TicTacToeActivity.class);
         String player1Name = et_player1_name.getText().toString();
         String player2Name = et_player2_name.getText().toString();
         intent.putExtra("Player1",player1Name );

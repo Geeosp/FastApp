@@ -2,7 +2,9 @@
 <resources>
 
     <string name="app_name">FastApp</string>
-    <string name="how_many_you_are">How many you are?</string>
+    <string name="championship">Campeonato</string>
+    <string name="of">of</string>
+    <string name="tic_tac_toe">Tic Tac Toe</string>
     <string name="i_am_one">I am one!</string>
     <string name="i_am_two">We are two!</string>
     <string name="action_settings">Settings</string>
@@ -10,21 +12,22 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_two">TwoActivity</string>
     <string name="title_activity_fullscreen_simon">FullscreenSimonActivity</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+
     <string name="player">Player</string>
     <string name="name">Name</string>
     <string name="player1">Player 1</string>
     <string name="player2">Player 2</string>
-    <string name="ok">OK</string>
-    <string name="title_activity_fullscreen_velha">FullscreenVelhaActivity</string>
-    <string name="title_activity_simon">SimonActivity</string>
+
     <string name="title_activity_velha">VelhaActivity</string>
     <string name="player1Name">Player 1</string>
     <string name="player2Name">Player 2</string>
     <string name="tic_tac_toe_contest">Tic Tac Toe Contest!</string>
     <string name="action_ok">Ok</string>
     <string name="draw">Draw!</string>
-    <string name="has_won">has Won!</string>
-
+    <string name="has_won">has won!</string>
+    <string name="continue_game">OK</string>
+    <string name="start">Start!</string>
+    <string name="play">play</string>
+    <string name="finish_game">finish</string>
 </resources>

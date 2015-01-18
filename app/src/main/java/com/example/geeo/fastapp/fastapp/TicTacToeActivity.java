@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 
 
-public class VelhaActivity extends ActionBarActivity {
+public class TicTacToeActivity extends ActionBarActivity {
 
     TextView tv_player1;
     TextView tv_score1;
@@ -198,7 +198,7 @@ public class VelhaActivity extends ActionBarActivity {
             title = player2Name + " " + getString(R.string.has_won);
         }
 
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(VelhaActivity.this);
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(TicTacToeActivity.this);
         alertDialogBuilder.setTitle(title);
         alertDialogBuilder.setMessage(player1Name + " " + player1Score + " x " + player2Score + " " + player2Name);
         alertDialogBuilder.setPositiveButton(getResources().getString(R.string.action_ok), new DialogInterface.OnClickListener() {

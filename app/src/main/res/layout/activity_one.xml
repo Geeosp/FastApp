@@ -20,6 +20,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="openSimon"
-        android:text="@string/ok"/>
+        android:text="@string/continue_game"/>
 
 </LinearLayout>

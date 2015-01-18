@@ -38,14 +38,17 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-    public void oneClick(View v){
-        Intent intent = new Intent(this, OneActivity.class);
-        finish();
-        startActivity(intent);
-    }
     public void twoClick(View v){
         Intent intent = new Intent(this, TwoActivity.class);
         finish();
         startActivity(intent);
     }
+/*
+    public void oneClick(View v){
+        Intent intent = new Intent(this, OneActivity.class);
+        finish();
+        startActivity(intent);
+    }
+*/
+
 }
