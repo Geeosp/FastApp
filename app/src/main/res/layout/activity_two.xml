@@ -9,17 +9,21 @@
     tools:context="com.example.geeo.fastapp.fastapp.OneActivity"
     android:orientation="vertical"
     android:gravity="center"
-    android:padding="60dp">
+    android:padding="40dp"
+    android:background="@color/p2_turn_color">
 
     <TextView
-        android:text="@string/tic_tac_toe_contest"
+        android:text="@string/write_player_name"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="25sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginTop="50dp">
 
         <EditText
         android:layout_width="match_parent"
@@ -34,7 +38,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/et_player2_name"
             android:hint="@string/player2Name"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:layout_marginTop="25dp" />
     </LinearLayout>
 
     <Button
@@ -42,7 +47,10 @@
         android:layout_width="wrap_content"
         android:text="@string/start"
         android:onClick="openVelha"
-
+        android:layout_marginTop="50dp"
+        android:background="@drawable/start_button_colors"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
         />
 
 

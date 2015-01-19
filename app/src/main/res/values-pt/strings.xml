@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FastApp</string>
+
+    <string name="continue_game">Continuar</string>
+    <string name="action_ok">Ok</string>
+    <string name="draw">Empate!</string>
+    <string name="finish_game">Encerrar!</string>
+    <string name="has_won">venceu!</string>
+    <string name="name">Nome</string>
+    <string name="of">de</string>
+    <string name="play">Jogar!</string>
+    <string name="player">Jogador</string>
+    <string name="player1">Jogador 1</string>
+    <string name="player2">Jogador 2</string>
+    <string name="player1Name">Jogador 1</string>
+    <string name="player2Name">Jogador 2</string>
+    <string name="start">Começar!</string>
+    <string name="tic_tac_toe">Jogo da Velha</string>
+    <string name="tic_tac_toe_contest">Torneio\nde\nJogo da Velha!</string>
+    <string name="write_player_name">Escreva o nome dos jogadores</string>
+</resources>

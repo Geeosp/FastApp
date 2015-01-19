@@ -7,37 +7,46 @@
     tools:context="com.example.geeo.fastapp.TicTacToeActivity"
     android:id="@+id/ll_window">
     <!--player 2-->
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:rotation="180"
-        android:id="@+id/rl_turn_player2">
+        android:id="@+id/ll_turn_player2"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_margin="15dp"
+        android:rotation="180">
 
-    <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:id="@+id/iv_circle"
-android:src="@drawable/tic_tac_o"
-            android:layout_alignParentLeft="true" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/iv_circle"
+                android:src="@drawable/tic_tac_o" />
+
+
+            <TextView
+                android:id="@+id/tv_player2_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textSize="22sp" />
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:text="0"
-            android:id="@+id/tv_player2_score" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Name"
-            android:id="@+id/tv_player2_name"
-            android:layout_toRightOf="@id/iv_circle"
-            android:layout_toLeftOf="@id/tv_player2_score"
-
+            android:text="00"
+            android:id="@+id/tv_player2_score"
+            android:textSize="30sp"
             />
+    </LinearLayout>
 
-    </RelativeLayout>
 
     <!--Tabuleiro -->
 
@@ -144,36 +153,43 @@ android:src="@drawable/tic_tac_o"
     </LinearLayout>
 
     <!--player 1-->
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/rl_turn_player1"
+        android:id="@+id/ll_turn_player1"
+        android:orientation="horizontal"
         android:gravity="center_vertical"
+        android:layout_margin="15dp"
         >
 
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:id="@+id/iv_xis"
-            android:src="@drawable/tic_tac_x"
-            android:layout_margin="20dp"
-            android:layout_alignParentLeft="true" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/iv_xis"
+                android:src="@drawable/tic_tac_x" />
+
+
+            <TextView
+                android:id="@+id/tv_player1_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textSize="22sp" />
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:text="0"
-            android:id="@+id/tv_player1_score" />
-
-        <TextView
-            android:id="@+id/tv_player1_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Name"
-            android:layout_toRightOf="@id/iv_xis"
-            android:layout_toLeftOf="@id/tv_player1_score" />
-
-    </RelativeLayout>
+            android:text="00"
+            android:id="@+id/tv_player1_score"
+            android:textSize="30sp" />
+    </LinearLayout>
 
 </LinearLayout>
