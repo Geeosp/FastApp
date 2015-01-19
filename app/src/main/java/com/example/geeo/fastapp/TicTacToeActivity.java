@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.geeo.fastapp.fastapp.R;
@@ -36,9 +35,10 @@ public class TicTacToeActivity extends Activity {
     LinearLayout tictacContainer;
     int stateTag = 12;
     int emptyRooms;
-    RelativeLayout rl_turn_p1;
-    RelativeLayout rl_turn_p2;
+    LinearLayout rl_turn_p1;
+    LinearLayout rl_turn_p2;
     LinearLayout ll_window;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,8 +54,8 @@ public class TicTacToeActivity extends Activity {
         tv_score1 = (TextView) findViewById(R.id.tv_player1_score);
         tv_score2 = (TextView) findViewById(R.id.tv_player2_score);
         tictacContainer = (LinearLayout) findViewById(R.id.tic_tac_container);
-        rl_turn_p1 = (RelativeLayout) findViewById(R.id.rl_turn_player1);
-        rl_turn_p2 = (RelativeLayout) findViewById(R.id.rl_turn_player2);
+        rl_turn_p1 = (LinearLayout) findViewById(R.id.ll_turn_player1);
+        rl_turn_p2 = (LinearLayout) findViewById(R.id.ll_turn_player2);
         ll_window = (LinearLayout) findViewById(R.id.ll_window);
         //mapeando os ids das views em um array, pra poder manipular melhor
         viewsIds = new int[3][3];
@@ -232,7 +232,7 @@ public class TicTacToeActivity extends Activity {
         });
 
 
-        alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+        alertDialogBuilder.setNegativeButton(getResources().getString(R.string.finish_game), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 // cancel the alert box and put a Toast to the user
                 finish();
@@ -259,10 +259,6 @@ public class TicTacToeActivity extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
     }

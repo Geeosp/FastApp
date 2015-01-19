@@ -1,11 +1,16 @@
 <resources>
 
-    <!--<color name="black_overlay">#66000000</color>-->
+    <!-- main -->
+    <color name="main_background">@color/p1_turn_color</color>
+    <color name="bt_play_background">@color/tic_tac_color_o</color>
+
+
     <color name="p1_turn_color">#cefffd</color>
     <color name="p2_turn_color">#ddffdd</color>
 
 
-    <!--referencias, alterar aqui nao influencia em nada-->
+    <!--referencias, -->
     <color name="tic_tac_color_o">#7ec56d</color>
     <color name="tic_tac_color_x">#78ccc9</color>
+    <color name="tic_tac_mao">#b45656</color>
 </resources>

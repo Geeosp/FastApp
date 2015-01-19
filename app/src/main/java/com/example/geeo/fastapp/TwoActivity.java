@@ -14,12 +14,13 @@ import com.example.geeo.fastapp.fastapp.R;
 public class TwoActivity extends Activity {
     EditText et_player1_name;
     EditText et_player2_name;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_two);
-        this.et_player1_name = (EditText)findViewById(R.id.et_player1_name);
-        this.et_player2_name = (EditText)findViewById(R.id.et_player2_name);
+        this.et_player1_name = (EditText) findViewById(R.id.et_player1_name);
+        this.et_player2_name = (EditText) findViewById(R.id.et_player2_name);
     }
 
 
@@ -38,13 +39,11 @@ public class TwoActivity extends Activity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
     }
-    public void openVelha(View v){
+
+    public void openVelha(View v) {
         Intent intent = new Intent(this, TicTacToeActivity.class);
         String player1Name = et_player1_name.getText().toString();
         String player2Name = et_player2_name.getText().toString();

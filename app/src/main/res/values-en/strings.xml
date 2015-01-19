@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FastApp</string>
+    <string name="continue_game">Continue</string>
+    <string name="draw">Draw!</string>
+    <string name="finish_game">Finish Game!</string>
+    <string name="has_won">won!</string>
+    <string name="name">Name</string>
+    <string name="of">of</string>
+    <string name="play">Play!</string>
+    <string name="player">Player</string>
+    <string name="player1">Player 1</string>
+    <string name="player1Name">Player 1</string>
+    <string name="player2">Player 2</string>
+    <string name="player2Name">Player 2</string>
+    <string name="start">Start!</string>
+    <string name="tic_tac_toe">Tic Tac Toe</string>
+    <string name="tic_tac_toe_contest">Tic Tac Toe\nContest!</string>
+    <string name="write_player_name">Write the player\'s\nnames</string>
+    <string name="action_ok">Ok</string>
+</resources>
