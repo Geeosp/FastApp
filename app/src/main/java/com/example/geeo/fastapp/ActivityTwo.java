@@ -11,7 +11,7 @@ import android.widget.EditText;
 import com.example.geeo.fastapp.fastapp.R;
 
 
-public class TwoActivity extends Activity {
+public class ActivityTwo extends Activity {
     EditText et_player1_name;
     EditText et_player2_name;
 

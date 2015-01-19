@@ -40,7 +40,7 @@ public class MainActivity extends Activity {
     }
 
     public void twoClick(View v) {
-        Intent intent = new Intent(this, TwoActivity.class);
+        Intent intent = new Intent(this, ActivityTwo.class);
 
         startActivity(intent);
     }
